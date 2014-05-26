@@ -1,5 +1,8 @@
 echo "Starting compile..."
+
+env
 set -exo
+exit 1
 
 if [ -z "$APACHE_VERSION" ]; then
  APACHE_VERSION=2.2.27
