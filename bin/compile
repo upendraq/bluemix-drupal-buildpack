@@ -23,6 +23,8 @@ make
 
 make install
 
+find $APACHE_DIR
+
 #set parameters for the apache httpd.conf file
 cat $APACHE_DIR/conf/original/httpd.conf |
 sed 's/Listen 80/Listen ${VCAP_APP_PORT}/g' |
