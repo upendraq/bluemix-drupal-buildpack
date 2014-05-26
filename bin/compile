@@ -1,3 +1,23 @@
 echo "Starting compile..."
 set -exo
-ls -ltr /app
+
+if [ -z "$APACHE_VERSION" ]; then
+ APACHE_VERSION=2.2.27
+fi
+
+if [ -z "$APACHE_DOWNLOAD_URL" ]; then
+ APACHE_DOWNLOAD_URL="http://www.apache.org/dist/httpd/httpd-${APACHE_VERSION}.tar.gz"
+fi
+
+curl --max-time 60 --location $APACHE_DOWNLOAD_URL | tar xz
+
+APACHE_DIR=$1/apache
+mkdir -pv $APACHE_DIR
+
+cd httpd-$APACHE_VERSION
+./configure --prefix=$APACHE_DIR --enable-rewrite
+
+make
+
+make install
+
