@@ -1,0 +1,4 @@
+---
+addons:
+default_process_types:
+web: sh main.sh

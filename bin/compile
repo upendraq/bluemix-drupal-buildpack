@@ -1,0 +1,3 @@
+echo "Starting compile..."
+set -exo
+sudo apt-get install apache2=2.4.7-1ubuntu4
