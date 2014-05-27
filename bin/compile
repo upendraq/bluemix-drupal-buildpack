@@ -30,3 +30,6 @@ sed 's/DirectoryIndex index.html/DirectoryIndex index.html index.php/g' |
 sed 's/<\/FilesMatch>/<\/FilesMatch><FilesMatch \\.php$>SetHandler application\/x-httpd-php<\/FilesMatch>/g' |
 cat 
 #> $APACHE_DIR/conf/httpd.conf
+
+ls -ltr $APACHE_DIR/conf/httpd.conf
+id
