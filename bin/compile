@@ -4,7 +4,7 @@ env
 set -exo
 
 if [ -z "$APACHE_VERSION" ]; then
- APACHE_VERSION=2.2.27
+ APACHE_VERSION=2.4.17
 fi
 
 if [ -z "$APACHE_DOWNLOAD_URL" ]; then
